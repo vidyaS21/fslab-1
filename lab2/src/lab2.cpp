@@ -76,16 +76,31 @@ void student::unpack()
         while(buffer[i]!='|')
             usn+=buffer[i++];
             i++;
+     name.erase();
+       while(buffer[i]!='|')
+    	   name+=buffer[i++];
+           i++;
+      branch.erase();
+        while(buffer[i]!='|')
+        	branch+=buffer[i++];
+           i++;
+      sem.erase();
+        while(buffer[i]!='$')
+        	sem+=buffer[i++];
+           i++;
+
 
     }
 
-void student::modify(string)
+void student::modify(string key)
 {
-	int choice;
-	string key;
-	cout<<"Do you want to modify?\n1.usn 2.name 3.branch 4.sem\n enter your choice\n";
-	cin>>choice;
-	switch(choice)
+	int ch,pos;
+	fstream f1;
+	cout<<"enter the key to modify ; "<< endl;
+	cin>>key;
+	pos=search(key);
+	cout<<"enter choice : \n1.usn\n2.name\n3.branch\n4.sem";
+	switch(ch)
 	{
 	case 1:cout<<"usn";
 	       cin>>usn;
@@ -101,9 +116,11 @@ void student::modify(string)
 	       break;
 	default:cout<<"wrong choice";
 	}
-	buffer.erase();
 	pack();
-	write();
+	pos=pos-101;
+	f1.open("data.txt");
+	f1.seekp(pos,ios::beg);
+	f1<<buffer;
 }
 
 int main() {
