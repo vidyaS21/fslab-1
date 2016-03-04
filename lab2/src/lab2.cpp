@@ -1,13 +1,4 @@
-//============================================================================
-// Name        : lab2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
-
-#include <iostream>
+ #include <iostream>
 #include<fstream>
 #include<sstream>
 #include<string.h>
@@ -50,7 +41,7 @@ void student::pack()
 void student::write()
 {
 	fstream f1;
-	f1.open("data.txt,ios::out|ios::app");
+	f1.open("data.txt",ios::out|ios::app);
 	f1<<buffer;
 	f1<<endl;
 	f1.close();
@@ -85,6 +76,7 @@ void student::unpack()
         while(buffer[i]!='|')
             usn+=buffer[i++];
             i++;
+
     }
 
 void student::modify(string)
@@ -117,6 +109,7 @@ void student::modify(string)
 int main() {
     int choice;
     string key;
+    student s;
     while(1)
     {
             cout<<"1.INSERT 2.SEARCH 3.DELETE 4.MODIFY";
@@ -124,17 +117,20 @@ int main() {
             cin>>choice;
             switch(choice)
             {
-            case 1:s.read();
+              case 1:s.read();
                    s.pack();
                     break;
-            case 2:cout<<"enter key";
+              case 2:cout<<"enter key";
                     cin>>key;
                     //cout<<key;
                     s.search(key);
-            case 3:cout<<"enter key";
+                    break;
+              case 3:cout<<"enter key";
                     cin>>key;
                     s.modify(key);
-            }
+                    break;
+              default:return 0;
+             }
     }
 
     return 0;
