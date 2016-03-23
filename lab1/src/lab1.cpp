@@ -1,9 +1,9 @@
 //============================================================================
 // Name        : lab1.cpp
 // Author      : vidya
-// Version     :
+// Version     :c++
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description  :fixed length
 //============================================================================
 
 #include<fstream>
