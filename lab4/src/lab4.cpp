@@ -1,9 +1,9 @@
 //============================================================================
 // Name        : lab4.cpp
-// Author      : 
-// Version     :
+// Author      : vidya
+// Version     :c++
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : rrn
 //============================================================================
 
 #include<iostream>
